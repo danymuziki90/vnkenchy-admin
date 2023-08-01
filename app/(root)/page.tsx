@@ -1,7 +1,9 @@
+import { UserButton } from "@clerk/nextjs";
+
 const SetupPage = ( ) => {
   return (
     <div className="p-4">
-      Click me
+      <UserButton afterSignOutUrl="/"/>
     </div>
   );
 }
