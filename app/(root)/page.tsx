@@ -1,8 +1,11 @@
-import { Button } from "@/components/ui/button"
-export default function Home() {
+const SetupPage = ( ) => {
   return (
-    <div>
-      <button>Click me</button>
+    <div className="p-4">
+      Click me
     </div>
-  )
+  );
 }
+
+export default SetupPage;
+
+
