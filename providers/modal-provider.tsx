@@ -4,7 +4,7 @@ import { StoreModal } from "@/components/ui/modals/store-modal";
 import { useEffect, useState } from "react";
 
 export const ModalProvider = ( ) => {
-  const [isMounted, setIsMounted] = usesState (false);
+  const [isMounted, setIsMounted] = useState (false);
 
   useEffect (() => {
     setIsMounted(true);
@@ -16,5 +16,5 @@ export const ModalProvider = ( ) => {
     <>
     <StoreModal/>
       </>
-  );
+  ); 
 };
