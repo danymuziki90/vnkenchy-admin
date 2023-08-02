@@ -5,7 +5,7 @@ import { useStoreModal } from "@/hooks/use-store-modal";
 import { Modal } from "../modal";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "../form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../form";
 import { Input } from "../input";
 import { Button } from "../button";
 
@@ -46,14 +46,16 @@ const onSubmit = async (values: z.infer <typeof formSchema>) => {
                     Name
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="Vnkenchy" {...field}/>
+                    <Input placeholder="Create a new store" {...field}/>
                   </FormControl>
+                  <FormMessage/>
                 </FormItem>
               )}
               />
               <div className="pt-6 space-x-2 flex items-center justify-end">
-                <Button>Continue</Button>
-                <Button>Cancel</Button>
+                <Button type="submit">Continue</Button>
+                <Button variant="outline" 
+                onClick={StoreModal.onClose}>Cancel</Button>
               </div>
             </form>
           </Form>
