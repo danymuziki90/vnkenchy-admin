@@ -23,7 +23,7 @@ const formSchema = z.object ({
   name: z.string( ).min(1),
 })
 export const StoreModal = ( )=> {
-  const StoreModal = useStoreModal( );
+  const storeModal = useStoreModal( );
 
   const [loading, setLoading] = useState(false);
 
@@ -50,8 +50,8 @@ const onSubmit = async (values: z.infer <typeof formSchema>) => {
   <Modal 
     title="Create Store"
     description="Add a new Store"
-    isOpen= {StoreModal.isOpen}
-    onClose={StoreModal.onClose}
+    isOpen= {storeModal.isOpen}
+    onClose={storeModal.onClose}
     >
       <div>
         <div className="space-y-4 py-2 pb-4">
@@ -78,7 +78,7 @@ const onSubmit = async (values: z.infer <typeof formSchema>) => {
               <div className="pt-6 space-x-2 flex items-center justify-end">
                 <Button disabled={loading}
                  variant="outline" 
-                onClick={StoreModal.onClose}>Cancel</Button>
+                onClick={storeModal.onClose}>Cancel</Button>
                 <Button disabled ={loading} 
                  type="submit">Continue</Button>
                 
