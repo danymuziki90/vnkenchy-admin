@@ -6,9 +6,17 @@ import { useStoreModal } from "@/hooks/use-store-modal";
 import { Modal } from "../ui/modal";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
+import { 
+  Form, 
+  FormControl, 
+  FormField, 
+  FormItem, 
+  FormLabel, 
+  FormMessage } 
+  from "../ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { toast } from "react-hot-toast";
 
 
 const formSchema = z.object ({
@@ -30,8 +38,9 @@ const onSubmit = async (values: z.infer <typeof formSchema>) => {
     setLoading(true);
 
     const response = await axios.post ('/api/stores', values);
+    window.location.assign('/${response.data.id}');
   } catch (error){
-    console.log (error);
+    toast.error ("Something went wrong.")
   } finally {
     setLoading (false);
   }
