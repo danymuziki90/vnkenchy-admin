@@ -6,7 +6,9 @@ import { ModalProvider } from '@/providers/modal-provider'
 import type { Metadata } from 'next'
 
 import './globals.css'
+
 import { ToasterProvider } from '@/providers/toast-provider'
+
 
 
 
