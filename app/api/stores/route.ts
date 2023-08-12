@@ -1,8 +1,6 @@
-
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import prismadb from "@/lib/prismadb";
-
 
 
 export async function POST (
@@ -24,7 +22,7 @@ export async function POST (
     const store = await prismadb.store.create ({
       data: {
         name,
-        userId
+        userId,
       }
     });
 
