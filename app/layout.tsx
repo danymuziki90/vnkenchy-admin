@@ -11,7 +11,6 @@ import { ToasterProvider } from '@/providers/toast-provider'
 
 
 
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
